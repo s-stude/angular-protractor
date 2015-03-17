@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<body>
+<div ng-controller="MyController">
+    Hello {{ greetMe }}!
+
+    <ul ng-repeat="item in items track by $index">
+        <li>{{ item }}</li>
+    </ul>
+
+    <input type="text" ng-model="newItem"/>
+
+    <button class="button" ng-click="add()">Add</button>
+
+    <h3>Repos</h3>
+
+    <ul ng-repeat="repo in repos">
+        <li> {{ repo.full_name }}</li>
+    </ul>
+
+    <button class="btn-load-repos" ng-click="loadRepos()">Load repos</button>
+
+</div>
+
+<script src="js/require.js" data-main="js/main.js"></script>
+
+</body>
+</html>
