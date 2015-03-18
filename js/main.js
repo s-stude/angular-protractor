@@ -37,12 +37,10 @@ requirejs(['angular'], function (angular) {
 
             $scope.add = function () {
                 $scope.items.push($scope.newItem);
-
-
             }
         }]);
 
-    angular.element(document).ready(function () {
-        angular.bootstrap(document, ['myApp']);
+    angular.element('.js-app').ready(function () {
+        angular.bootstrap(angular.element('.js-app'), ['myApp']);
     });
 });

@@ -1,11 +1,25 @@
 <!doctype html>
 <html>
+<style>
+    .ib {
+        display: inline-block;
+        padding: 2px 4px;
+        margin: 2px;
+        background: rgba(250, 250, 250, 0.3);
+        border-radius: 2px;;
+    }
+</style>
 <body>
-<div ng-controller="MyController">
+
+<div class="static">
+    <h1>This is static text, and not under Angular...</h1>
+</div>
+
+<div id="angapp" class="js-app" ng-controller="MyController">
     Hello {{ greetMe }}!
 
-    <ul ng-repeat="item in items track by $index">
-        <li>{{ item }}</li>
+    <ul>
+        <li ng-repeat="item in items track by $index" class="ib">{{ item }}</li>
     </ul>
 
     <input type="text" ng-model="newItem"/>
@@ -14,8 +28,8 @@
 
     <h3>Repos</h3>
 
-    <ul ng-repeat="repo in repos">
-        <li> {{ repo.full_name }}</li>
+    <ul>
+        <li ng-repeat="repo in repos" class="ib"> {{ repo.full_name }}</li>
     </ul>
 
     <button class="btn-load-repos" ng-click="loadRepos()">Load repos</button>
